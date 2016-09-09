@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="eark:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <!-- Optional meta-data about the model -->
+    <description>Document Model for Repo Extension X</description>
+    <author>My Name</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco System Model Definitions -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <!-- Custom namespace for your domain -->
+    <namespaces>
+        <namespace uri="http://www.magenta.dk/model/content/1.0" prefix="eark"/>
+    </namespaces>
+
+    <!-- ===============================================================================================================
+        Constraints, Types, and Aspects go here...
+        -->
+        
+    <types>
+    	<type name="eark:series">
+    		<title>Series</title>
+    		<parent>cm:folder</parent>
+    		<!-- associations>
+    			<association name="eark:relatedSubseries">
+    				<title>Subseries folder</title>
+    				<source>
+    					<mandatory>false</mandatory>
+    					<many>false</many>
+    				</source>
+    				<target>
+    					<class>eark:subseries</class>
+    					<mandatory>false</mandatory>
+    					<many>true</many>
+    				</target>
+    			</association>
+    		</associations-->
+    	</type>
+    	<type name="eark:subseries">
+    		<title>Subseries</title>
+    		<parent>cm:folder</parent>
+    		<!-- associations>
+    			<association name="eark:relatedSeries">
+    				<title>Series folder</title>
+    				<source>
+    					<mandatory>false</mandatory>
+    					<many>true</many>
+    				</source>
+    				<target>
+    					<class>eark:series</class>
+    					<mandatory>true</mandatory>
+    					<many>true</many>
+    				</target>
+    			</association>
+    		</associations-->
+    	</type>
+
+		<type name="eark:record">
+			<title>Record</title>
+			<parent>cm:folder</parent>
+			
+		</type>
+
+    </types>
+
+</model>
